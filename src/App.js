@@ -43,12 +43,21 @@ function App() {
                           toDos.sort();
                           ;}
 
-
-  const [loading, setLoading] = useState(true);
+  // 실시간 비트코인[이름,가격] api를 이용해서 긁어오기
+  // const [loading, setLoading] = useState(true);
+  // const [coins, setCoins] = useState([]);
+  // useEffect(() => {
+  //   fetch("https://api.coinpaprika.com/v1/tickers")
+  //   .then((res) => res.json())
+  //   .then((json) => {
+  //     setCoins(json);
+  //     setLoading(false);
+  //   });
+  // }, []);
 
   // toDoList 추가될때만 콘솔로그   
-  useEffect(() => {
-    console.log(toDos);}, [toDos]);
+  // useEffect(() => {
+  //   console.log(toDos);}, [toDos]);
 
   // console.log('changing state : refresh rendering ex) call the API');
   // useEffect : 코드가 한번만 실행할 수 있게 도와줌
@@ -137,11 +146,22 @@ function App() {
       </form>
 
       <hr />
-      <div>
-        <h1>The Coins!</h1>
-        {loading ? <strong>Loading ...</strong> : null}
-      </div>
-
+      {/* <div>
+        <h1>The Coins! ({coins.length})</h1>
+        {loading ?
+         (<strong>Loading ...</strong>)
+         :(
+          <select>
+            {coins.map((coin) =>(
+              <option>
+                {coin.name} ({coin.symbol}) : ${coin.quotes.USD.price} USD
+              </option>
+            ))}
+          </select>
+         )}
+      </div> */}
+      <hr />
+      <br></br>
 
     </div>
   </div>
