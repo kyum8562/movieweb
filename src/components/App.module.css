@@ -21,10 +21,10 @@
 
 .Night {
   background-color: black;
-  color: white;
+  color: grey;
 }
 
 .Day {
-  background-color: white;
+  background-color: grey;
   color: black;
 }
