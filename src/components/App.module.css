@@ -7,6 +7,7 @@
 .subTitle {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: red;
 }
 .btn {
   background-color: tomato;
@@ -16,4 +17,14 @@
   border-radius: 10;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.Night {
+  background-color: black;
+  color: white;
+}
+
+.Day {
+  background-color: white;
+  color: black;
 }
