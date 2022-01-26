@@ -68,7 +68,7 @@ function App() {
   // []가 변화할 떄만 iRunOnlyOnce를 구동시킨다.
   // React.js가 바라보는 부분이 []없기에 한 번만 가동된다.
   useEffect(iRunOnlyOnce, []);
-
+  
   useEffect(() => {
     if(counter !== 0){
       console.log("counter가 변화할 때만 구동됩니다!");
@@ -112,7 +112,7 @@ function App() {
       <button 
         className={styles.btn} 
         onClick = {onClick}>
-        click　me
+        click　me 
       </button>
       
       <br />

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <span>Total clicks : </span>
+    <br>
+    <button id="btn">Click Me</button>
+    <script>
+        let cnt = 0;
+        const button = document.getElementById("btn");
+        const span = document.querySelector("span");
+        function handleClick() {
+            cnt ++;
+            span.innerText = `Total clicks :  ${cnt}`;
+        }
+        button.addEventListener("click", handleClick); 
+
+    </script>
+    <nav></nav>
+    <span></span>
+    <br />
+    <form>
+        <a href="#bookmark1"><strong>Start anchor</strong></a>
+        <p/>
+
+        <!-- filedset은 form 내에서 유저에게 시각적 편의를 위해 제공되는 그루핑 -->
+        <fieldset> 
+            <!-- legend는 해당 fildset 라벨링-->
+            <legend>ID & Password</legend>
+            <p>
+                <label for ="text_id">ID : </label>
+                <input id = "text_id" type = "text" placeholder="id" size=20><br />
+                <label for ="text_pw">Password : </label>
+                <input id = "text_pw" type="password" placeholder=" password"><br />
+            </p>
+        </fieldset><br />
+        <fieldset>
+            <legend>input 예시</legend>
+            
+            <fieldset>
+                <legend>Select-Option</legend>
+                    <select name = "job" size = "1">
+                        <option>학생</option>
+                        <option>공무원</option>
+                        <option>회사원</option>
+                        <option>취준생</option>
+                    </select>
+            </fieldset>
+        
+            <fieldset>
+                <legend>CheckBox</legend>
+                    <input type = "checkbox" name = "books" value ="computer" id="windows" /><label for = "windows">windows</label>
+                    <input type = "checkbox" name = "books" value ="computer" />MacOS
+                    <input type = "checkbox" name = "books" value ="computer" />Etc..
+            </fieldset>
+
+            <!-- Button : <button id = "22" onclick="alert('onClick 이벤트 발생시 alert입니다!')">test 입니다</button><br /> -->
+            <fieldset>
+                <legend>time/datetime/datetime-local</legend>
+                time : <input type="time" readonly><br />
+                datetime : <input type="datetime" placeholder="datetime" value=2020><br />
+                datetime-local : <input type="datetime-local"><br />
+            </fieldset>
+
+            <fieldset>
+                <legend>date/month/week</legend>
+                    date : <input type="date"><br /> 
+                    month : <input type="month"><br />
+                    week : <input type="week"><br />
+            </fieldset>
+
+            <fieldset>
+                <legend>etc. . .</legend>
+                    textarea : <input type = "textarea" placeholder="write desc here ..." name="dd"><br />
+                    color : <input type="color"><br />
+                    hidden : <input type="hidden"><br />
+                    range : 1 <input type="range" min = "1", max = "5", value="3"> 5<br />
+                    email : <input type="email" maxlength="5" ><br />
+                    file : <input type="file"><br />
+                    image : <input type="image"><br />
+                    <!-- radio는 name의 값을 동일하게 주면, 같은 name에 한해서 하나만 선택이 가능한 속성(attribute)이다. -->
+                    radio : <input type="radio" name="r1" checked> 
+                    radio2 : <input type="radio" name="r1"><br />
+                    <!-- search는 입력폼이지만 x버튼을 통해서 지울수 있는 기능이 있다. -->
+                    search : <input type="search" ><br />
+                    <!-- number은 입력폼내의 화살표를 통해서 up/down을 할 수 있다.  -->
+                    number : <input type="number" min ="0" max = "20" value="10"><br />
+                    <!-- pattern
+                    pattern="[A-Za-z]{num} : num개수 만큼의 영문자 입력"
+                    pattern="[0-9]{num} : num개수 만큼의 숫자 입력"
+                    pattern="[A-Za-z0-9]{num} : num개수 만큼의 영문자 or 숫자 입력"
+                    pattern="[A-Za-z0-9]{min, max} : min에서 max 만큼의 글자수를 영문자 or 숫자로 입력"
+                    pattern="[0-9]+ : 숫자를 1개 이상 입력"
+                    -->
+                tel : <input type="tel" placeholder="010-1234-5678" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" />
+            </fieldset>
+            <br />
+            <fieldset>
+                <legend>etc2</legend>
+                <!-- progress : 현재 진척상황을 알려주는 엘리먼트 -->
+                progress : <progress value="50" min = "0" max = "100"></progress>
+                <p />
+
+                <!-- detail,summary 태그 :유저의 클릭으로 정보를 보여주고. 숨기는 패턴 
+                    open이라는 CSS선택자를 통해 스타일 변경가능-->
+                <details>
+                    <summary>클릭 전 보여질 내용</summary>
+                    <span>클릭 후 보여질 내용</span>
+                </details><br />
+                
+                <!-- picture는 각기 다른 버전의 이미지를 표시가능
+                    ex)PC에서는 그림이 고화질로 웹에서 보여지나, 모바일에서는 빠른 실행
+                    속도를 위해 저사양으로 보여지도록 설정가능 -->
+                <picture = "../public/logo192.png"></picture>
+
+                <!-- datalist : JS작성 없이 Auto complete(자동완성)을 가능하게함
+                    이 기능은 첫 글자에 대한 자동완성뿐만 아니라 나머지 글자에 대해서도 가능하다!!! -->
+                <input type="text" list ="country" size="12" />
+                <datalist id = "country">
+                    <option value = "스페인" />
+                    <option value = "한국" />
+                    <option value = "영국" />
+                </datalist><br />
+
+                <!-- output : 입력된 데이터로부터 계산된 결과를 표현하기 위한 엘리먼트 -->
+                
+            </fieldset>
+
+
+            <button type="submit" disabled>제출하기</button>
+            <button type="reset">초기화</button>
+        </fieldset>
+        <p>
+            <a id = "bookmark1"> <Strong>Destination anchor</Strong> <em>(bookmark1)</em> : moving in text for href</a><br />
+        </p>
+            <hr />
+        <dl>
+            <dt>
+                <strong>get</strong>
+            </dt>
+            <dd>
+                전송할 데이터를 URL 주소에 완전히 포함하여 문자열 형태로 전달하는 방식
+                URL 뒤에 ?를 붙이고 변수가 여러 개일 경우는 &로 구분한다(한글은 16비트 유니코드로 표현된다.)
+                간단한 데이터 전달할 때는 편리하나 <strong>보안이 취약함</strong>
+            </dd>
+            <dt>
+                <strong>post</strong>
+            </dt>
+            <dd>
+                프로그램 입출력 방식을 사용하여 데이터의 양에 제한이 없으며
+                전송하는 데이터가 드러나지 않음(보안도 O)<br />
+            </dd>
+        </dl>
+        <hr />
+    </form>
+    
+</body>
+</html>
