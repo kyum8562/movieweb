@@ -1,6 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style type="text/css">
+        body {font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 20px;}
+        a:link {color:blue;}
+        a:visited {color:red;}
+        legend:before {content:"★";}
+        legend:after {content:"★"; font-size: small;}
+        button {background-color: tomato; color:white;}
+        /* p요소 바로 아래에 속하는 strong 요소 */
+        p > strong {color : blue;}
+        /* p요소 바로 다음에 속하는 strong 요소 */
+        p + strong {color : skyblue;}
+
+        /* 박스모델 */
+        /* 외부공백(margin) : 부모요소(바탕)과 테두리 사이
+           내부여백(padding) : 테두리와 콘텐츠(문서의 내용)사이
+           콘텐츠(element/content) : 문서의 내용
+           테두리/경계선(border) : 패딩의 외곽선*/
+
+        /* display : 디스플레이 속성 */
+        /* h3이나 p와 같이 글줄 단위로 영역을 차지하는 경우 : 블록(block) 유형의 박스모델 
+           span이나 strong과 같이 글줄 내에서 영역을 차지하는 경우 : 인라인(inline) 유형 박스모델
+           table나 list 요소의 경우네는 각 유형 혹은 목록유형의 박스모델이 적용된다
+           br과 같이 출력되는 모양이 없는 none 유형도 있다.
+           block : 글줄(문단) 단위로 박스 모델로 지정( 마지막에 줄을 바꾼다 )
+           inline : 글줄 내의 글자 단위의 박스 모델로 지정( 줄을 바꾸지 않는다 )
+           table : 표 단위 박스 모델로 지정
+           list-item : 목록의 열거 항목 단위로 박스 모델 지정
+           none : 지정하지 않음*/
+
+        /* position : 위치값의 유형 지정 */
+        /* static(기본값) : 순서대로 배치(위치지정 필요없음)
+            absolute : 문서 혹은 상위 요소 내에서 절대위치에 배치
+            relative : 직전요소에 이어서 상대위치에 배치
+            fixed : 현재 브라우저 화면 내에서 절대위치 배치 */
+
+        /* 애니메이션 
+           키프레임 애니메이션, 크롬에서는 -webkit-keyframes 으로 작동하니 검색해보자*/
+        
+        /* 웹사이트 구성 
+           1. 기능/메뉴 나열
+           2. 기능과 메뉴를 페이지별로 할당 HTML 문서 작성
+           3. CSS스타일 적용 */
+
+
+
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -125,7 +171,12 @@
                 </datalist><br />
 
                 <!-- output : 입력된 데이터로부터 계산된 결과를 표현하기 위한 엘리먼트 -->
-                
+                <input type = "number" id = "a" name="price" min="0" step="100" value="0" /> 원 X
+                <input type = "number" id = "b" name="num" min="0" step="1" value="0" /> 권 =
+                <input type = "text" id = "result" />원
+                <output onForminput="value=price.valueAsNumber*num.valueAsNumber + '원'" /><br />
+
+
             </fieldset>
 
 
@@ -154,7 +205,50 @@
             </dd>
         </dl>
         <hr />
+        <script type ="text/javascript">
+            var win;
+            function add(){
+                var a = document.getElementById('a').value;
+                var b = document.getElementById('b').value;
+                document.getElementById('result').value = parseInt(a) + parseInt(b);
+            }
+        </script>
+        <button  onclick = "add();">add</button>
+        <!-- 이벤트 -->
+        <!-- click : onclick
+             dbclick : ondblclick
+             mousedown : onmousedown 마우스 커서를 element위에 위치시킴 + 클릭시
+             mousemove : onmousemove 마우스 커서를 element위에서 이동시
+             mouseover : onmouseover 마우스 커서가 element에 위치시킬 시
+             mouseout : onmouseout 마우스 커서가 element를 벗어날 시
+             mouseup : onmouseup : 마우스 커서를 element에 위치키시고 마우스버튼 뗄시 -->
+        
+        <!-- innerHTML innerText 
+             innerHTML은 속성에 저장된 값을 HTML 태그로 해석함 -> 콘텐츠 내용 + 속성 변경시
+             innerText는 단순히 문자열로 해석한다 -> 콘텐츠 내용만 변경시 사용-->
+        <br/>
+        <p id = "text"> This is the teXt</p>
+        <button id = "b1">innerHTML</button>
+        <button id = "b2">innerText</button>
+
+
     </form>
-    
-</body>
+    <script type = "text/javascript">
+        document.getElementById("b1").onmouseover = mouseover_innerHTML;
+        document.getElementById("b2").onmouseover = mouseover_innerText;
+
+        document.getElementById("b1").onmouseout = resetText;
+        document.getElementById("b2").onmouseout = resetText;
+
+        function mouseover_innerHTML(){
+            document.getElementById("text").innerHTML = <h1>"hi"</h1>;
+        }
+        function mouseover_innerText(){
+            document.getElementById("text").innerText = <h1>"hi"</h1>;
+        }
+        function resetText(){
+            document.getElementById("text").innerHTML = "";
+        }
+    </script>
+</body> 
 </html>
