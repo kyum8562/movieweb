@@ -12,7 +12,7 @@ function App() {
      {/*한 번에 하나의 라우터만 렌더링 하기 위해 Switch 사용  */}
     <Switch>
       {/*Route 안에 컴포넌트 적어줌 */}
-      {/* Home : 유저가 홈화면으로 갈 때의 Route */}
+      {/* Home : 유저가 홈화면으로  갈 때의 Route */}
       {/* Detail : 유저가 세부화면으로 갈 때의 Route */}
       <Route basename={process.env.PUBLIC_URL} path="/movie/:id">
         <Detail />
