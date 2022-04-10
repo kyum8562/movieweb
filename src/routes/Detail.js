@@ -21,7 +21,7 @@ function Detail(){
         getMovie();
     }, []);
 
-    console.log(movies);
+    // console.log(movies);
 
     return (
         <div>

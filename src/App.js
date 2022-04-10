@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import Button from './components/Button';
-import List from './components/List';
-import styles from './components/App.module.css';
 import Home from './routes/Home';
 import Detail from './routes/Detail';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import NotFound from './routes/NotFound';
+
 // router render
 function App() {
   return (
@@ -14,12 +13,12 @@ function App() {
       {/*Route 안에 컴포넌트 적어줌 */}
       {/* Home : 유저가 홈화면으로  갈 때의 Route */}
       {/* Detail : 유저가 세부화면으로 갈 때의 Route */}
-      <Route basename={process.env.PUBLIC_URL} path="/movie/:id">
-        <Detail />
-      </Route>
-      <Route path={`${process.env.PUBLIC_URL}/`} element={< Home />}>
-        <Home></Home>
-      </Route>
+      <Route path={`${process.env.PUBLIC_URL}/movie/:id`} element={<Detail />}><Detail /></Route>
+      <Route path={`${process.env.PUBLIC_URL}/`} element={< Home />}>< Home /></Route>
+
+      {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */} 
+      <Route path="*" element={<NotFound />}></Route>
+
     </Switch>
   </Router>
   );
