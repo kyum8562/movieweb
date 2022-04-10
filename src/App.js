@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Home from './routes/Home';
 import Detail from './routes/Detail';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Search from './routes/Search';
 import NotFound from './routes/NotFound';
 
 // router render
@@ -14,7 +15,8 @@ function App() {
       {/* Home : 유저가 홈화면으로  갈 때의 Route */}
       {/* Detail : 유저가 세부화면으로 갈 때의 Route */}
       <Route path={`${process.env.PUBLIC_URL}/movie/:id`} element={<Detail />}><Detail /></Route>
-      <Route path={`${process.env.PUBLIC_URL}/`} element={< Home />}>< Home /></Route>
+      <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />}><Home /></Route>
+      <Route path={`/search`} element={<Search />}><Search /></Route>
 
       {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */} 
       <Route path="*" element={<NotFound />}></Route>

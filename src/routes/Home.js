@@ -1,5 +1,7 @@
 import Movie from "../components/Movie";
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
+import '../App.css';
 
 function Home(){
   const [loading, setLoading] = useState(true);
@@ -24,6 +26,9 @@ function Home(){
         <h1>Loading...</h1>
       ) : (
         <div>
+          <div class="searching">
+                <Link to = {`/search`}>검색하기</Link>
+          </div>
           {movies.map((movie) => (
             <Movie
               key={movie.id}

@@ -2,7 +2,7 @@ import { getMouseEventOptions } from "@testing-library/user-event/dist/utils";
 import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
 import {Link} from 'react-router-dom';
-import Movie from "../components/Movie";
+
 
 function Detail(){
     const [loading, setLoading] = useState(true);
