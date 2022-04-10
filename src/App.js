@@ -16,7 +16,7 @@ function App() {
       {/* Detail : 유저가 세부화면으로 갈 때의 Route */}
       <Route path={`${process.env.PUBLIC_URL}/movie/:id`} element={<Detail />}><Detail /></Route>
       <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />}><Home /></Route>
-      <Route path={`/search`} element={<Search />}><Search /></Route>
+      <Route path={`${process.env.PUBLIC_URL}/search`} element={<Search />}><Search /></Route>
 
       {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */} 
       <Route path="*" element={<NotFound />}></Route>

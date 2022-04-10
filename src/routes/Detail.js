@@ -25,23 +25,23 @@ function Detail(){
 
     return (
         <div>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <div>
-            <img src={movies.medium_cover_image} />
-            <h2>
-                {movies.title}
-            </h2>
-            <p>{movies.description_full}</p>
-            <ul>
-                {movies.genres.map((g) => (
-                <li key = {g}>{g}</li>
-                ))}
-            </ul>
-        </div>
-      )}
-    </div>     
+            {loading ? (
+                <h1>Loading...</h1>
+            ) : (
+                <div>
+                    <img src={movies.medium_cover_image} />
+                    <h2>
+                        {movies.title}
+                    </h2>
+                    <p>{movies.description_full}</p>
+                    <ul>
+                        {movies.genres.map((g) => (
+                        <li key = {g}>{g}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+        </div>     
     );
 }
 export default Detail; 
