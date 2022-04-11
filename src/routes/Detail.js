@@ -29,6 +29,9 @@ function Detail(){
                 <h1>Loading...</h1>
             ) : (
                 <div>
+                    <div className="searching">
+                        <Link to = "/search/">검색하기</Link>
+                    </div>
                     <img src={movies.medium_cover_image} />
                     <h2>
                         {movies.title}
